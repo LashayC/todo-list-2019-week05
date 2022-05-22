@@ -8,6 +8,8 @@
 //append li to the ul
 //reset input field so it's empty
 
+const bodyParser = require("body-parser")
+
 // Assign variables for the html elements so that there's less redundant typing in the function.
 const input = document.getElementById('todoInput')
 const button = document.getElementById('submitBtn')
@@ -17,36 +19,37 @@ const clearCrossedBtn = document.getElementById('clearCrossed')
 const listCount = document.getElementById('listCount')
 
 //create a function
-function toDoList(e){
-    // add event object so it doesn't refresh
-    e.preventDefault()
+// function toDoList(e){
+//     // add event object so it doesn't refresh
+//     e.preventDefault()
     
-    // stop function from running with input is empty
-    if(input.value === ""){
-        return
-    }
+//     // stop function from running with input is empty
+//     if(input.value === ""){
+//         return
+//     }
     
-    //get the input
-    let text = input.value
+//     //get the input
+//     let text = input.value
     
-    //create the li
-    const li = document.createElement('li')
+//     //create the li
+//     const li = document.createElement('li')
   
-    li.className = 'notcrossed'
+//     li.className = 'notcrossed'
 
-    //put input in the li
-    li.innerText = text
+//     //put input in the li
+//     li.innerText = text
     
-    //append li to the ul
-    ul.appendChild(li)
+//     //append li to the ul
+//     ul.appendChild(li)
     
-    //reset input field so it's empty
-    input.value = ""
+//     //reset input field so it's empty
+//     input.value = ""
     
-    let count = document.querySelectorAll('.notcrossed').length
-    listCount.innerText = count
-}
+//     let count = document.querySelectorAll('.notcrossed').length
+//     listCount.innerText = count
+// }
 
+document.querySelector('h1').innerText = 'caydaddy'
 function makeCrossedList(e){
 
     if(e.target.classList.contains('notcrossed')){
@@ -66,20 +69,21 @@ function makeCrossedList(e){
     listCount.innerText = nc
 }
 
-function clearAllList(){
-    while(ul.firstChild){
-        ul.removeChild(ul.firstChild)
-    }
-}
+// function clearAllList(){
+//     while(ul.firstChild){
+//         ul.removeChild(ul.firstChild)
+//         listCount.innerText  = "0"
+//     }
+// }
 
-function clearCrossedList(){
-    Array.from(ul.childNodes).forEach( el => {
-        console.log(el)
-        if(el.classList.contains('crossed')){
-            el.remove()
-        }
-    })
-}
+// function clearCrossedList(){
+//     Array.from(ul.childNodes).forEach( el => {
+//         console.log(el)
+//         if(el.classList.contains('crossed')){
+//             el.remove()
+//         }
+//     })
+// }
 
 
 

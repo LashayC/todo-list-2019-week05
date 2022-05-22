@@ -1,10 +1,10 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/">
+    <link rel="stylesheet" href='css/style.css'>
 
     <title>Todolist</title>
 </head>
@@ -16,12 +16,18 @@
 
     <section class="page"> 
         <h2>Enter your goals here:</h2>
-        <form action="">
-            <input id="todoInput" type="text">
+        <form action="/todos" method="POST">
+            <input id="todoInput" type="text" placeholder="Enter goal" name="item">
             <button id="submitBtn">Submit</button>
         </form>
-        
-        <ul id="todoList"></ul>
+    
+        <ul id="todoList">
+        <% for(var i=0; i<todos.length; i++) {%>
+            <li>
+            <span><%= todos[i].item %></span>
+            </li>
+        <% } %>
+        </ul>
 
         <p class="font">Goals Left:<span id="listCount">0</span></p>
 
@@ -29,6 +35,6 @@
         <button id="clearCrossed">Clear Completed</button>
     </section>
 
-    <script rel="style/javascript" src="js/app2.js"></script>
+    <script rel="style/javascript" src="js/main.js"></script>
 </body>
-</html> -->
+</html>
