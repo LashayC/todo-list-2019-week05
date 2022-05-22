@@ -18,23 +18,25 @@
         <h2>Enter your goals here:</h2>
         <form action="/todos" method="POST">
             <input id="todoInput" type="text" placeholder="Enter goal" name="item">
+            <input type="hidden" name="checkedOff" value="no">
             <button id="submitBtn">Submit</button>
         </form>
     
         <ul id="todoList">
         <% for(var i=0; i<todos.length; i++) {%>
             <li>
-            <span><%= todos[i].item %></span>
+            <span class="listItems"><%= todos[i].item %></span>
+            <span class="hidden"><%= todos[i].checkedOff %></span>
             </li>
         <% } %>
         </ul>
 
-        <p class="font">Goals Left:<span id="listCount">0</span></p>
+        <!-- <p class="font">Goals Left:<span id="listCount">0</span></p> -->
 
         <button id="clearBtn">Clear All</button>
         <button id="clearCrossed">Clear Completed</button>
     </section>
 
-    <script rel="style/javascript" src="js/main.js"></script>
+    <script rel="javascript" src="/js/main.js"></script>
 </body>
 </html>
