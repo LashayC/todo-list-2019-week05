@@ -43,7 +43,7 @@ Array.from(listItems).forEach(function (element) {
     console.log(`here ${checkedOff}`);
     console.log(this);
 
-    //conditional for adding yes or no to checkedoff property. Goes with 2 dif PUTS. **Check if thats bad code with EIR
+    //conditional for adding yes or no to checkedoff property. Goes with 2 dif PUTS. 
     if (checkedOff == "no") {
       fetch("crossedOut", {
         method: "put",
